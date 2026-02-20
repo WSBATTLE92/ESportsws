@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+        <title></title>
+    </head> 
+    <body> 
+        <h1></h1>
+        <div>
+            
+        </div>  
+    </body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WS BATTLE | FASTEST GATEWAY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Rajdhani:wght@600;700&display=swap');
+        
+        body {
+            background: #020205;
+            color: #fff;
+            font-family: 'Rajdhani', sans-serif;
+            background-image: linear-gradient(135deg, #1a0505 0%, #020205 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .font-special { font-family: 'Orbitron', sans-serif; }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #ff003c;
+        }
+
+        .input-fast {
+            background: rgba(255, 255, 255, 0.05) !important;
+            border: 1px solid rgba(255, 255, 255, 0.1) !important;
+            color: white !important;
+            height: 48px;
+        }
+
+        .input-fast:focus { border-color: #ff003c !important; outline: none; }
+
+        .app-btn {
+            border: 2px solid rgba(255,255,255,0.05);
+            transition: 0.2s all;
+        }
+
+        .active-ep { border-color: #00b894 !important; background: rgba(0, 184, 148, 0.1) !important; }
+        .active-jc { border-color: #f39c12 !important; background: rgba(243, 156, 18, 0.1) !important; }
+
+        .btn-boost {
+            background: linear-gradient(90deg, #ff003c, #ff5e00);
+            box-shadow: 0 8px 25px rgba(255, 0, 60, 0.4);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(255, 0, 60, 0.4); }
+            to { box-shadow: 0 0 25px rgba(255, 0, 60, 0.8); }
+        }
+    </style>
+</head>
+<body class="p-4">
+
+    <!-- Brand Header -->
+    <div class="text-center mt-4 mb-6">
+        <h1 class="text-4xl font-special font-black italic tracking-tighter uppercase">WS <span class="text-red-600">BATTLE</span></h1>
+        <p class="text-[9px] font-bold text-gray-500 uppercase tracking-widest">Instant Leader Registration</p>
+    </div>
+
+    <div class="max-w-md mx-auto">
+        <div class="glass-panel p-6 rounded-3xl shadow-2xl">
+            <form id="fastTrackForm" class="space-y-4">
+                
+                <div class="grid grid-cols-2 gap-3">
+                    <input type="text" id="tName" class="input-fast w-full px-4 rounded-xl text-sm font-bold uppercase" placeholder="Team Name" required>
+                    <input type="tel" id="lWA" class="input-fast w-full px-4 rounded-xl text-sm font-bold" placeholder="Leader WhatsApp" required>
+                </div>
+
+                <div class="space-y-2">
+                    <input type="text" id="p1" class="input-fast w-full px-4 rounded-xl text-sm font-bold border-l-4 border-l-red-600" placeholder="P1: Leader UID" required>
+                    <input type="text" id="p2" class="input-fast w-full px-4 rounded-xl text-sm" placeholder="P2: Name/UID" required>
+                    <input type="text" id="p3" class="input-fast w-full px-4 rounded-xl text-sm" placeholder="P3: Name/UID" required>
+                    <input type="text" id="p4" class="input-fast w-full px-4 rounded-xl text-sm" placeholder="P4: Name/UID" required>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3 pt-2">
+                    <div id="epTab" onclick="setType('ep')" class="app-btn p-4 rounded-2xl cursor-pointer text-center active-ep">
+                        <img src="https://i.ibb.co/cK7NXyPD/655ef94548d5077e9f0b194351e39cd8-icon.png" class="h-10 mx-auto mb-1">
+                        <span class="text-[8px] font-black uppercase tracking-widest">EasyPaisa</span>
+                    </div>
+                    <div id="jcTab" onclick="setType('jc')" class="app-btn p-4 rounded-2xl cursor-pointer text-center">
+                        <img src="https://i.ibb.co/bjLj2QSX/JC-Eng-Black-1.png" class="h-10 mx-auto mb-1">
+                        <span class="text-[8px] font-black uppercase tracking-widest text-white/70">JazzCash</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-boost w-full py-4 rounded-2xl font-special font-black text-lg text-white uppercase italic tracking-wider">
+                    Instant Pay & Join <i class="fas fa-bolt ml-1"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ultra Fast Overlay -->
+    <div id="syncLayer" class="fixed inset-0 bg-black z-[9999] hidden flex-col items-center justify-center text-center p-6">
+        <div class="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full animate-spin mb-6"></div>
+        <h2 class="text-2xl font-special font-bold italic uppercase mb-2">Syncing App...</h2>
+        <p class="text-gray-500 text-[10px] font-bold uppercase tracking-widest">Opening secure payment channel</p>
+    </div>
+
+    <script>
+        let currentApp = 'ep';
+        let isRedirecting = false;
+        
+        const config = {
+            ep: { num: "03284318037", url: "easypaisa://send-money?phone=03284318037&amount=200" },
+            jc: { num: "03284903801", url: "jazzcash://transfer?phone=03284903801&amount=200" }
+        };
+
+        function setType(t) {
+            currentApp = t;
+            document.getElementById('epTab').classList.toggle('active-ep', t === 'ep');
+            document.getElementById('jcTab').classList.toggle('active-jc', t === 'jc');
+        }
+
+        // Jab leader app se wapas browser par aaye
+        window.onfocus = function() {
+            if (isRedirecting) {
+                isRedirecting = false;
+                triggerFinalWA();
+            }
+        };
+
+        function triggerFinalWA() {
+            const team = document.getElementById('tName').value.toUpperCase();
+            const p1 = document.getElementById('p1').value;
+            const p2 = document.getElementById('p2').value;
+            const p3 = document.getElementById('p3').value;
+            const p4 = document.getElementById('p4').value;
+
+            const msg = `━━━━━━━━━━━━━━━%0A` +
+                        `⚡ *WS BATTLE - INSTANT SYNC* ⚡%0A` +
+                        `━━━━━━━━━━━━━━━%0A` +
+                        `🛡️ *Team:* ${team}%0A` +
+                        `💰 *Method:* ${currentApp.toUpperCase()}%0A%0A` +
+                        `🎮 *ROSTER:*%0A` +
+                        `1. ${p1}%0A2. ${p2}%0A3. ${p3}%0A4. ${p4}%0A%0A` +
+                        `✅ *Status:* Payment Done%0A` +
+                        `━━━━━━━━━━━━━━━`;
+
+            window.location.href = `https://wa.me/923284903801?text=${msg}`;
+        }
+
+        document.getElementById('fastTrackForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const layer = document.getElementById('syncLayer');
+            layer.classList.remove('hidden');
+            layer.classList.add('flex');
+
+            isRedirecting = true;
+            
+            // Foran App Launch karein
+            setTimeout(() => {
+                window.location.href = config[currentApp].url;
+            }, 500);
+        });
+    </script>
+</body>
+</html>
